@@ -14,7 +14,7 @@ public class Frame extends JFrame{
 		new JFrame();
 		
 		this.setSize(800,600);
-		this.setTitle("Cube Solver");
+		this.setTitle("Triangle Midsegments");
 		this.setVisible(true);
 		this.setResizable(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);

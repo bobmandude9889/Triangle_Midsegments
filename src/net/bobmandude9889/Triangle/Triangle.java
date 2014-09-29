@@ -38,16 +38,15 @@ public class Triangle {
 		g.drawLine(p1.x, p1.y, p2.x, p2.y);
 		g.drawLine(p2.x, p2.y, p3.x, p3.y);
 		g.drawLine(p3.x, p3.y, p1.x, p1.y);
+		g.fillOval(p1.x - 4, p1.y - 4, 8, 8);
+		g.fillOval(p2.x - 4, p2.y - 4, 8, 8);
+		g.fillOval(p3.x - 4, p3.y - 4, 8, 8);
 		g.setColor(s);
 	}
 	
 	public void renderMidsegment(Graphics g, Color c){
-		Color s = g.getColor();
-		g.setColor(c);
-		g.drawLine(findMidpoint(p1,p2).x, findMidpoint(p1,p2).y, findMidpoint(p2,p3).x, findMidpoint(p2,p3).y);
-		g.drawLine(findMidpoint(p2,p3).x, findMidpoint(p2,p3).y, findMidpoint(p3,p1).x, findMidpoint(p3,p1).y);
-		g.drawLine(findMidpoint(p3,p1).x, findMidpoint(p3,p1).y, findMidpoint(p1,p2).x, findMidpoint(p1,p2).y);
-		g.setColor(s);
+		Triangle t = new Triangle(findMidpoint(p1,p2),findMidpoint(p2,p3),findMidpoint(p3,p1));
+		t.render(g, c);
 	}
 	
 	private Point findMidpoint(Point p1, Point p2){
